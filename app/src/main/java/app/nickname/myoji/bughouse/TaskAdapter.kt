@@ -11,7 +11,7 @@ class TaskAdapter(
     private val context: Context,
     private val itemClickListener: ItemClickListener
 ) : RecyclerView.Adapter<TaskAdapter.ViewHolder>() {
-    val items: MutableList<Task> = mutableListOf()
+    private val taskList: MutableList<Task> = mutableListOf()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(context).inflate(R.layout.item_task_cell, parent, false)
@@ -19,11 +19,11 @@ class TaskAdapter(
     }
 
     override fun getItemCount(): Int {
-        return items.size
+        return taskList.size
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val item = items[position]
+        val item = taskList[position]
         holder.container.setOnClickListener {
             itemClickListener.onItemClick(position)
         }
@@ -32,7 +32,7 @@ class TaskAdapter(
     }
 
     fun addAll(items: List<Task>) {
-        this.items.addAll(items)
+        taskList.addAll(items)
         notifyDataSetChanged()
     }
 
