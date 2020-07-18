@@ -7,6 +7,8 @@ import androidx.appcompat.app.AppCompatActivity
 import coil.api.load
 import kotlinx.android.synthetic.main.activity_image_view.*
 
+const val REQUEST_CODE: Int = 403
+
 class ImageViewActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,7 +20,7 @@ class ImageViewActivity : AppCompatActivity() {
         getImageButton.setOnClickListener {
             val intent = Intent(Intent.ACTION_OPEN_DOCUMENT)
             intent.type = "image/*"
-            startActivityForResult(intent, 100)
+            startActivityForResult(intent, REQUEST_CODE)
         }
 
     }
@@ -26,7 +28,7 @@ class ImageViewActivity : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
-        if (requestCode == 1 && resultCode == Activity.RESULT_CANCELED) {
+        if (requestCode == REQUEST_CODE && resultCode == Activity.RESULT_CANCELED) {
             imageView.load(data?.data)
         }
     }
