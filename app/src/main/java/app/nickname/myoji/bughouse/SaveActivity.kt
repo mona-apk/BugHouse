@@ -16,6 +16,12 @@ class SaveActivity : AppCompatActivity() {
         val editor = sharedPreferences.edit()
         saveButton.setOnClickListener {
             val text = input.text.toString()
+
+            if (text.isEmpty()) {
+                Toast.makeText(applicationContext, "文字を入力してください", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
             val commit = editor.putString(SAVE_TEXT, text).commit()
             if (commit) {
                 Toast.makeText(applicationContext, "保存に成功しました", Toast.LENGTH_SHORT).show()
