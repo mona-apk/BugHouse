@@ -19,8 +19,8 @@ class ListActivity : AppCompatActivity() {
 
         val adapter = TaskAdapter(this, object : TaskAdapter.ItemClickListener {
             override fun onItemClick(position: Int) {
-                val intent = Intent(this@ListActivity, DetailActivity::class.java)
-                intent.putExtra("TASK_NAME", taskList[position].name)
+                val intent = DetailActivity.newIntent(this@ListActivity, taskList[position].name)
+                startActivity(intent)
             }
         })
 
