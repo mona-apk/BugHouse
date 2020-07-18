@@ -24,7 +24,10 @@ class ListActivity : AppCompatActivity() {
             }
         })
 
-        recyclerView.layoutManager = LinearLayoutManager(this)
+        recyclerView.apply {
+            layoutManager = LinearLayoutManager(context)
+            this.adapter = adapter
+        }
         adapter.addAll(taskList)
 
         addButton.setOnClickListener {
