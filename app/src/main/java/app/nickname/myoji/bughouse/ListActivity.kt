@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_list.*
 
 class ListActivity : AppCompatActivity() {
-    private val taskList: List<Task> = listOf(
+    private val taskList: ArrayList<Task> = arrayListOf(
         Task("Task 1"),
         Task("Task 2"),
         Task("Task 3")
@@ -17,7 +17,7 @@ class ListActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_list)
 
-        val adapter = TaskAdapter(this, object: TaskAdapter.ItemClickListener{
+        val adapter = TaskAdapter(this, object : TaskAdapter.ItemClickListener {
             override fun onItemClick(position: Int) {
                 val intent = Intent(this@ListActivity, DetailActivity::class.java)
                 intent.putExtra("TASK_NAME", taskList[position].name)
@@ -33,5 +33,4 @@ class ListActivity : AppCompatActivity() {
             adapter.addAll(taskList)
         }
     }
-
 }
