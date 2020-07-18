@@ -13,7 +13,7 @@ class CountActivity : AppCompatActivity() {
 
         button.setOnClickListener {
             number += 1
-            textView.text = number
+            textView.text = number.toString()
         }
     }
 }
