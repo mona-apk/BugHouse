@@ -28,7 +28,7 @@ class ImageViewActivity : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
-        if (requestCode == REQUEST_CODE && resultCode == Activity.RESULT_CANCELED) {
+        if (requestCode == REQUEST_CODE && resultCode == Activity.RESULT_OK) {
             imageView.load(data?.data)
         }
     }
