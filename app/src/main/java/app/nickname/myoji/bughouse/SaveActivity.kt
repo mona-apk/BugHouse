@@ -14,7 +14,7 @@ class SaveActivity : AppCompatActivity() {
         val sharedPreferences = getSharedPreferences("Second", Context.MODE_PRIVATE)
         val editor = sharedPreferences.edit()
         saveButton.setOnClickListener {
-            val text = input.text
+            val text = input.text.toString()
             editor.putString("SAVE", text)
         }
     }
