@@ -1,7 +1,9 @@
 package app.nickname.myoji.bughouse
 
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_list.*
@@ -36,6 +38,12 @@ class ListActivity : AppCompatActivity() {
             if (name.isBlank()) {
                 Toast.makeText(applicationContext, "文字を入力してください", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
+            } else {
+                editText.setText("")
+                (getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager).hideSoftInputFromWindow(
+                    editText.windowToken,
+                    0
+                )
             }
             taskList.add(Task(name))
             adapter.addAll(taskList)
