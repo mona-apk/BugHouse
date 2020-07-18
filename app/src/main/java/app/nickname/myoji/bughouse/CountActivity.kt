@@ -9,11 +9,11 @@ class CountActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-                                                                                                                                                                               setContentView(R.layout.activity_count)
+        setContentView(R.layout.activity_count)
 
         button.setOnClickListener {
-            number　+=　1
-            textView.text=number
+            number　 += 　1
+            textView.text = number
         }
-
-
+    }
+}
