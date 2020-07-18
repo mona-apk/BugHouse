@@ -17,6 +17,7 @@
         <activity android:name=".LoadActivity" />
         <activity android:name=".ImageViewActivity" />
         <activity android:name=".ListActivity" />
+        <activity android:name=".DetailActivity" />
         <activity android:name=".launcher.LauncherActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
