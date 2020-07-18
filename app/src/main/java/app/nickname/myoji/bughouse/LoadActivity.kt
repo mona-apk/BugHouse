@@ -10,7 +10,7 @@ class LoadActivity : AppCompatActivity() {
         super.onDestroy()
         setContentView(R.layout.activity_load)
 
-        val sharedPreferences = getSharedPreferences("Third", Context.MODE_PRIVATE)
-        textView.text = sharedPreferences.getString("save", "")
+        val sharedPreferences = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
+        textView.text = sharedPreferences.getString(SAVE_TEXT, "")
     }
 }
