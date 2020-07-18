@@ -10,6 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".CountActivity" />
+        <activity android:name=".SaveActivity" />
         <activity android:name=".LoadActivity" />
         <activity android:name=".ImageViewActivity" />
         <activity android:name=".launcher.LauncherActivity">
