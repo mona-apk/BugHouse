@@ -17,7 +17,7 @@ class SaveActivity : AppCompatActivity() {
         saveButton.setOnClickListener {
             val text = input.text.toString()
 
-            if (text.isEmpty()) {
+            if (text.isBlank()) {
                 Toast.makeText(applicationContext, "文字を入力してください", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }

@@ -1,8 +1,8 @@
 package app.nickname.myoji.bughouse
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_list.*
 
@@ -32,6 +32,11 @@ class ListActivity : AppCompatActivity() {
 
         addButton.setOnClickListener {
             val name = editText.text.toString()
+
+            if (name.isBlank()) {
+                Toast.makeText(applicationContext, "文字を入力してください", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
             taskList.add(Task(name))
             adapter.addAll(taskList)
         }
