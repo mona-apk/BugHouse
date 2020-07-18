@@ -12,7 +12,7 @@ class CountActivity : AppCompatActivity() {
         setContentView(R.layout.activity_count)
 
         button.setOnClickListener {
-            number　 += 　1
+            number += 1
             textView.text = number
         }
     }
